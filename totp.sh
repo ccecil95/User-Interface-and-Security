@@ -71,7 +71,7 @@ gen_digest() {
 gen_token() {
 	local secret=$1 server=$2 period=$3
 	case "${server}" 
-	in Files | Showapp | Terminal
+	in Google
 	local key=$(echo "${secret}" | base32 -d | hexdump -ve '/1 "%02X"')
 	[[ -z "${key}" ]] && exit 1
 	# this part is more of a 160-bit hexadecimal number string.
@@ -91,4 +91,4 @@ gen_token() {
 esac
 }
 
-gen_token "$TOTP_SECRET)" "$TOTP_SERVER)" "$TOTP_PERIOD)" 
+gen_token "$(TOTP_SECRET)" "$(TOTP_SERVER)" "$(TOTP_PERIOD)" 
