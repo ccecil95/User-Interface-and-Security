@@ -1,5 +1,6 @@
 #!/bin/bash 
-
+# This is for my CST-221 USER INTERFACE AND SECURITY ASSIGNMENT
+# Christy Cecil 
 help() {
 	echo "This is a time based one time password algorithm"
 	echo
@@ -92,3 +93,5 @@ esac
 }
 
 gen_token "$(TOTP_SECRET)" "$(TOTP_SERVER)" "$(TOTP_PERIOD)" 
+
+# this was a great link to learn about TOTP https://rosettacode.org/wiki/Time-based_One-time_Password_Algorithm
